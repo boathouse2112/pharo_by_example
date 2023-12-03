@@ -46,6 +46,15 @@ Counter >> initialize [
 	count := 0
 ]
 
+{ #category : #printing }
+Counter >> printOn: aStream [
+
+	super printOn: aStream.
+	aStream
+		nextPutAll: ' with value: ';
+		nextPutAll: (aStream print: count)
+]
+
 { #category : #operations }
 Counter >> sdecrement [
 	count := count - 1
